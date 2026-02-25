@@ -1,0 +1,23 @@
+{
+  "name": "scorched-earth",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c yellow,cyan \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "npm run dev --workspace @scorched-earth/client",
+    "dev:server": "npm run dev --workspace @scorched-earth/server",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
