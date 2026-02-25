@@ -16,6 +16,20 @@ Turn-based 2-player browser artillery game built with TypeScript, Vite, and Sock
    - `npm run dev`
 3. Open two browser tabs at `http://localhost:5173`, create room in first tab, join via room code in second tab.
 
+## Docker deployment
+
+Build and run:
+
+1. Build image:
+   - `docker build -t scorched-earth:latest .`
+2. Run container:
+   - `docker run --rm -p 3001:3001 scorched-earth:latest`
+3. Open:
+   - `http://localhost:3001`
+
+The container serves both the API/WebSocket server and the built client from one process.
+Health endpoint: `GET /health`.
+
 ## Gameplay (v1)
 
 - 2 players only, room code matchmaking

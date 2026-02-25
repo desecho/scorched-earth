@@ -12,7 +12,10 @@ import {
   type ServerToClientEvents
 } from "@scorched-earth/shared";
 
-const SERVER_URL = import.meta.env.VITE_SERVER_URL ?? "http://localhost:3001";
+const SERVER_URL = import.meta.env.VITE_SERVER_URL ??
+  (window.location.hostname === "localhost" && window.location.port === "5173"
+    ? "http://localhost:3001"
+    : window.location.origin);
 const STORAGE_ROOM_KEY = "se_room_code";
 const STORAGE_TOKEN_KEY = "se_reconnect_token";
 

@@ -1,0 +1,9 @@
+.git
+.gitignore
+node_modules
+**/node_modules
+**/dist
+coverage
+.vite
+.DS_Store
+npm-debug.log
